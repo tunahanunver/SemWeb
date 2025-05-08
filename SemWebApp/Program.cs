@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SemWebApp.Data;
+using SemWebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<SemDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHttpClient<IHttpClientService, HttpClientService>();
+builder.Services.AddScoped<IKullaniciService, KullaniciService>();
+builder.Services.AddScoped<IDersService, DersService>();
+builder.Services.AddScoped<IRandevuService, RandevuService>();
+builder.Services.AddScoped<IAbonelikService, AbonelikService>();
+builder.Services.AddScoped<IOdemeService, OdemeService>();
 
 var app = builder.Build();
 
