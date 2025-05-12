@@ -1,0 +1,37 @@
+﻿// Views/Odeme/Index.cshtml
+@model IEnumerable<SemWebApp.Models.Odeme>
+
+@{
+    ViewData["Title"] = "Ödemeler";
+}
+
+<h1>Ödemeler</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Ödeme Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Miktar)</th>
+            <th>@Html.DisplayNameFor(model => model.OdemeTarihi)</th>
+            <th>@Html.DisplayNameFor(model => model.KullaniciId)</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Miktar) ₺</td>
+                <td>@Html.DisplayFor(modelItem => item.OdemeTarihi)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciId)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Düzenle</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detaylar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SemWebApp.Models
+namespace SemWeb.Models
 {
     public class Kullanici
     {
@@ -47,9 +47,9 @@ namespace SemWebApp.Models
         [Required(ErrorMessage = "Rol seçimi zorunludur.")]
         [Display(Name = "Rol")]
         public string Rol { get; set; }
-        
+
         public DateTime OlusturulmaTarihi { get; set; }
-        
+
         public List<Randevu> Randevular { get; set; }
         public List<Abonelik> Abonelikler { get; set; }
         public List<Odeme> Odemeler { get; set; }

@@ -1,0 +1,25 @@
+﻿// Views/Randevu/Details.cshtml
+@model SemWebApp.Models.Randevu
+
+@{
+    ViewData["Title"] = "Randevu Detayları";
+}
+
+<h1>Randevu Detayları</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.RandevuTarihi)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.RandevuTarihi)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.KullaniciId)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.KullaniciId)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DersId)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.DersId)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>

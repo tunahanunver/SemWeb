@@ -1,0 +1,22 @@
+﻿// Views/Ders/Details.cshtml
+@model SemWebApp.Models.Ders
+
+@{
+    ViewData["Title"] = "Ders Detayları";
+}
+
+<h1>Ders Detayları</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Ad)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Ad)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Aciklama)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Aciklama)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>

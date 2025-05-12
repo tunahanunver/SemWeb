@@ -1,0 +1,25 @@
+﻿// Views/Ders/Delete.cshtml
+@model SemWebApp.Models.Ders
+
+@{
+    ViewData["Title"] = "Ders Sil";
+}
+
+<h1>Ders Sil</h1>
+
+<h3>Bu dersi silmek istediğinizden emin misiniz?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Ad)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Ad)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Aciklama)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Aciklama)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>

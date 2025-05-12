@@ -1,18 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SemWebApp.Models;
+using Microsoft.EntityFrameworkCore;
+using SemWeb.Models;
 
-namespace SemWebApp.Data
+namespace SemWebApi.Data
 {
-    public class SemDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public SemDbContext(DbContextOptions<SemDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
-        public DbSet<Randevu> Randevular { get; set; }
         public DbSet<Ders> Dersler { get; set; }
+        public DbSet<Randevu> Randevular { get; set; }
         public DbSet<Abonelik> Abonelikler { get; set; }
         public DbSet<Odeme> Odemeler { get; set; }
 

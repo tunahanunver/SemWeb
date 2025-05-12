@@ -1,0 +1,25 @@
+﻿// Views/Abonelik/Details.cshtml
+@model SemWebApp.Models.Abonelik
+
+@{
+    ViewData["Title"] = "Abonelik Detayları";
+}
+
+<h1>Abonelik Detayları</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BaslangicTarihi)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.BaslangicTarihi)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BitisTarihi)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.BitisTarihi)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.KullaniciId)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.KullaniciId)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>

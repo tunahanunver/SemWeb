@@ -1,0 +1,37 @@
+﻿// Views/Randevu/Index.cshtml
+@model IEnumerable<SemWebApp.Models.Randevu>
+
+@{
+    ViewData["Title"] = "Randevular";
+}
+
+<h1>Randevular</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Randevu Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.RandevuTarihi)</th>
+            <th>@Html.DisplayNameFor(model => model.KullaniciId)</th>
+            <th>@Html.DisplayNameFor(model => model.DersId)</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.RandevuTarihi)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciId)</td>
+                <td>@Html.DisplayFor(modelItem => item.DersId)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Düzenle</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detaylar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
